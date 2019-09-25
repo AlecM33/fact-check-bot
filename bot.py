@@ -19,17 +19,22 @@ reddit = praw.Reddit(client_id=client_id,
 factCheckService = build("factchecktools", "v1alpha1", developerKey=api_key)
 
 sub = reddit.subreddit('CHANGEME')
+replyHeader = "Attempting to curate the most relevant claim to your query. If it's irrelevant, try being more specific.\n\n"
+replyFooter = ">\n\n^I ^am ^a ^bot ^utilizing ^Google's ^fact ^check ^exploration ^tool. ^[Source Code/Documentation](https://github.com/AlecM33/fact-check-bot)"
 
-#TODO add validations for API response
 def buildMessage(res):
-    claim = res["claims"][0]
-    publisher = claim["claimReview"][0]["publisher"]["name"]
-    rating = claim["claimReview"][0]["textualRating"]
-    url = claim["claimReview"][0]["url"]
-    claimText = claim["text"]
-    return ("According to **" + publisher + "**, the claim _" + claimText + "_ is **" + rating + "**.\n\nFull source: <"
-    + url +">\n\n^I ^am ^a ^bot ^utilizing ^Google's ^fact ^check ^exploration ^tool.")
+    if len(res["claims"] > 0):
+        claim = res["claims"][0]
+        publisher = claim["claimReview"][0]["publisher"]["name"]
+        rating = claim["claimReview"][0]["textualRating"]
+        url = claim["claimReview"][0]["url"]
+        claimText = claim["text"]
+        return (replyHeader + "According to **" + publisher + "**, the claim _" + claimText + "_ has a rating of: **" + rating + "**.\n\nFull source: <"
+        + url + replyFooter)
+    else:
+        return "I was unable to find a notable claim related to your query! Try revising your search." + replyFooter
 
+#TODO add validations and protections to safeguard against API misuse and erratic bot behavior.
 for comment in sub.stream.comments():
     if comment.body.lower().find("!factcheck") != -1:
         userQuery = comment.body.lower().split("!factcheck")[1].strip(" ")
