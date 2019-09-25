@@ -27,9 +27,10 @@ def buildMessage(res):
     rating = claim["claimReview"][0]["textualRating"]
     url = claim["claimReview"][0]["url"]
     claimText = claim["text"]
-    return "According to **" + publisher + "**, the claim _" + claimText + "_ is **" + rating + "**.\n\nFull source: <" + url +">\n\n^I ^am ^a ^bot ^utilizing ^Google's ^fact ^check ^exploration ^tool."
+    return ("According to **" + publisher + "**, the claim _" + claimText + "_ is **" + rating + "**.\n\nFull source: <"
+    + url +">\n\n^I ^am ^a ^bot ^utilizing ^Google's ^fact ^check ^exploration ^tool.")
 
-for comment in politicsSub.stream.comments():
+for comment in sub.stream.comments():
     if comment.body.lower().find("!factcheck") != -1:
         userQuery = comment.body.lower().split("!factcheck")[1].strip(" ")
         request = factCheckService.claims().search(query=userQuery)
