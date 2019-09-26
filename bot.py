@@ -25,7 +25,7 @@ replyFooter = "\n\n_I am a bot utilizing Google's fact check exploration tool. I
 
 def main():
     # monitor comment streams for relevant subreddits
-    for comment in reddit.su("politics+news+worldnews").stream.comments(skip_existing=True):
+    for comment in reddit.subreddit("politics+news+worldnews").stream.comments(skip_existing=True):
         if comment.body.lower().find("!factcheck") != -1:
             userQuery = comment.body.lower().split("!factcheck")[1].strip(" ")
             if (len(userQuery) == 0):
