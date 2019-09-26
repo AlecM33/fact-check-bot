@@ -8,7 +8,11 @@ r/politics<br/>
 r/news<br/>
 r/worldnews<br/>
 
-Use the syntax `!factcheck <query>`, where \<query> is a string of search terms used to find the desired fact-checks. Thus, you should condense a user's comment that you wish to validate into a string that you think will most likely return the desired claim. 
+Use the syntax `!factcheck <query>`, where \<query> is a string of search terms used to find the desired fact-checks. Thus, you should condense a comment or submission that you wish to validate into a string that you think will most likely return the desired claim. 
+
+Example usage and response:
+
+![example](bot_example.PNG)
   
 # Feedback/Contributing
 Feel free to open issues or pull requests under the relevant tabs. I'm hoping this bot will find purpose in the currently complex and volatile journalistic climate. 
