@@ -20,12 +20,12 @@ reddit = praw.Reddit(client_id=client_id,
 MAX_CLAIMS = 3
 EMPTY_QUERY_ERROR = "You did not provide a query from which to filter claims!\n\n"
 API_ERROR = "There was an issue with fetching claims for your query. :( You could try again another time."
-replyHeader = "Attempting to curate up to 3 relevant claims to your query. If they are irrelevant, try being more specific.\n\n"
-replyFooter = "\n\n_I am a bot utilizing Google's fact check exploration tool. I currently monitor r/politics, r/news, and r/worldnews._ \n\n^[Code/Documentation](https://github.com/AlecM33/fact-check-bot)"
+replyHeader = "Attempting to curate up to 3 relevant fact-checked claims based on your query. Irrelevant? Try being more specific.\n\n"
+replyFooter = "\n\n_I am a bot utilizing Google's fact check exploration tool. I currently monitor r/politics, r/news, and r/worldnews, r/Liberal, and r/Conservative._ \n\n^[Code/Documentation](https://github.com/AlecM33/fact-check-bot)"
 
 def main():
     # monitor comment streams for relevant subreddits
-    for comment in reddit.subreddit("politics+news+worldnews").stream.comments(skip_existing=True):
+    for comment in reddit.subreddit("politics+news+worldnews+Liberal+Conservative").stream.comments(skip_existing=True):
         if comment.body.lower().find("!factcheck") != -1:
             userQuery = comment.body.lower().split("!factcheck")[1].strip(" ")
             if (len(userQuery) == 0):
