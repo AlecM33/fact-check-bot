@@ -50,6 +50,7 @@ def main():
                     try:
                         comment.reply(reply)
                     except praw.exceptions.APIException as e:
+                        print ("Possibly rate limited!")
                         continue
 
 def buildTableRow(claim):
