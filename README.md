@@ -7,6 +7,8 @@ Currently, you can command the bot from these subreddits:
 r/politics<br/>
 r/news<br/>
 r/worldnews<br/>
+r/Liberal<br />
+r/Conservative (banned)<br/>
 
 Use the syntax `!factcheck <query>`, where \<query> is a string of search terms used to find the desired fact-checks. Thus, you should condense a comment or submission that you wish to validate into a string that you think will most likely return the desired claim. 
 
