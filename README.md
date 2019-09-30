@@ -16,6 +16,12 @@ Use the syntax `!factcheck <query>`, where \<query> is a string of search terms 
 Example usage and response:
 
 ![example](bot_example.PNG)
+
+# Important Notes
+
+Google's claim search is not perfect, and relies on claims sources have provided to it, as well as the wording the user provides. The bot will thus not always return the most relevant results, or put them first on the list. <br/><br />I **do not control** the sources that the bot provides, which is why the bot links them. If you doubt a fact check, clink the link and decide for yourself. 
+
+For a good overall review of the integrity of fact checkers, consult: https://www.realclearpolitics.com/fact_check_review/
   
 # Feedback/Contributing
 Feel free to open issues or pull requests under the relevant tabs. I'm hoping this bot will find purpose in the currently complex and volatile journalistic climate. 
