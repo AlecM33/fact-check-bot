@@ -21,7 +21,7 @@ MAX_CLAIMS = 3
 EMPTY_QUERY_ERROR = "You did not provide a query from which to filter claims!\n\n"
 MONITORED_SUBS = "politics+news+worldnews+Liberal+Conservative+botwatch+Libertarian"
 API_ERROR = "There was an issue with fetching claims for your query. :( You could try again another time."
-replyHeader = "Attempting to curate up to 3 relevant fact-checked claims based on your query. Irrelevant? Try being more specific.\n\n"
+replyHeader = "Attempting to curate up to 3 relevant fact-checked claims based on your query. On mobile, scroll the table to the side:\n\n"
 replyFooter = "\n\n_I am a bot utilizing Google's fact check exploration tool. I currently monitor r/politics, r/news, r/worldnews, r/Liberal, and r/Conservative (banned)._ \n\n^[Code/Documentation](https://github.com/AlecM33/fact-check-bot)"
 
 def main():
