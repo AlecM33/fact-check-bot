@@ -33,6 +33,7 @@ def main():
                 try:
                     comment.reply(EMPTY_QUERY_ERROR + replyFooter)
                 except praw.exceptions.APIException as e:
+                    print(e)
                     continue
             else:
                 try:
@@ -45,6 +46,7 @@ def main():
                     try:
                         comment.reply(API_ERROR + replyFooter)
                     except praw.exceptions.APIException as e:
+                        print(e)
                         continue
                 else:
                     reply = buildMessage(response)
