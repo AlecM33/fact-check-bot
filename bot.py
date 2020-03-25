@@ -43,6 +43,7 @@ def main():
                     response = request.execute()
                 # TODO more specifically handle problems with Google's API
                 except HttpError as err:
+                    print (err)
                     try:
                         comment.reply(API_ERROR + replyFooter)
                     except praw.exceptions.APIException as e:
