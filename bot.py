@@ -54,6 +54,7 @@ def main():
                     try:
                         comment.reply(reply)
                     except praw.exceptions.APIException as e:
+                        print (e)
                         print ("Possibly rate limited!")
                         continue
 
