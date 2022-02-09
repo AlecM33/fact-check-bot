@@ -26,4 +26,4 @@ Google's claim search is not perfect, and relies on claims sources have provided
 For a good overall review of the integrity of fact checkers, consult: https://www.realclearpolitics.com/fact_check_review/
   
 # Feedback/Contributing
-Feel free to open issues or pull requests under the relevant tabs. I'm hoping this bot will find purpose in the currently complex and volatile journalistic climate. 
+Feel free to open issues or pull requests under the relevant tabs.
