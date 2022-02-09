@@ -2,16 +2,16 @@
 A reddit bot that utilizes the google [fact check tools API](https://developers.google.com/fact-check/tools/api/) to retrieve claim analysis related to an arbitrary, user-provided query. The bot will (attempt to) nicely present the most relevant claims, including the source and the source's verdict. This bot is meant to provide an efficient way to broadcast truth in response to a questionable comment. The user that calls the bot must provide the necessary keywords to find the claim if it exists - see usage below. 
 
 # Usage
-Currently, you can command the bot from these subreddits:
+**This bot is currently decommissioned.** When it was active, it monitored this list of subreddits:
 
 r/politics<br/>
 r/news<br/>
 r/worldnews<br/>
 r/Liberal<br />
-r/Conservative (banned)<br/>
+r/Conservative<br/>
 r/Libertarian<br/>
 
-Use the syntax `!factcheck <query>`, where \<query> is a string of search terms used to find the desired fact-checks. Thus, you should condense a comment or submission that you wish to validate into a string that you think will most likely return the desired claim. 
+Comments with the syntax `!factcheck <query>`, where \<query> is a string of search terms, were used to search for relevant fact-checks. Thus, the more concise and relevant your comment, the more likely you were to receive a good result.
 
 Example usage and response:
 
